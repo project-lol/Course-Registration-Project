@@ -70,3 +70,41 @@
     }),
   ],
 ```
+
+<br>
+
+### assets을 사용하는 방법
+
+- assets 폴더에는 이미지, 폰트 등의 파일들이 들어있다.
+- 이것들을 사용하기 위해서는 file-loader를 사용해야 한다.
+- file-loader는 파일을 읽어서 dist 폴더에 저장해주는 역할을 한다.
+- 이것을 사용하기 위해서는 webpack.config.js에 module에 rules를 추가해준다.
+
+```js
+  module: {
+    rules: [
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: ["file-loader"],
+      },
+    ],
+  },
+```
+
+- 그리고 기존에 src에 있는 assets들을 dist로 복사해넣기 위해서는 copy-webpack-plugin을 사용해야 한다.
+- 이것을 사용하기 위해서는 webpack.config.js에 plugins를 추가해준다.
+
+```js
+  plugins: [
+    new CopyPlugin({
+      patterns: [{ from: "src/assets", to: "assets" }],
+    }),
+  ],
+```
+
+- 이렇게 하면 dist 폴더에 assets 폴더가 생성되고, 그 안에 파일들이 저장된다.
+- index.html에서 assets 폴더에 있는 파일들을 사용할 수 있다.
+
+```html
+<img src="./assets/logo.png" alt="logo" />
+```
