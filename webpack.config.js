@@ -63,6 +63,7 @@ module.exports = {
   plugins: [
     new webpack.ProvidePlugin({
       mnt: "moment",
+      $: "jquery",
     }),
     /*
     1. HtmlWebpackPlugin은 HTML 파일을 생성해주는 플러그인이다.

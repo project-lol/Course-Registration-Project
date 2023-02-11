@@ -203,4 +203,6 @@ $("#pricing-plan").on("click", () => {
 
 <br>
 
-### Shimming
+### Webpack Provider Plugin
+
+- Webpack Provider Plugin은 모든 모듈에서 $, jQuery, window.jQuery를 사용할 수 있게 해준다.
