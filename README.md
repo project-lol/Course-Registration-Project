@@ -225,3 +225,10 @@ $("#pricing-plan").on("click", () => {
     }),
   ],
 ```
+
+<br>
+
+### Tree shaking
+
+- Tree shaking은 사용하지 않는 코드를 제거하는 것을 의미한다.
+- 이것은 기본적으로 build를 할 때 --production 모드에서 빌드를 하면 자동으로 실행된다.
