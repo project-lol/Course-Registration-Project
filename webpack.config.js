@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin")
 const CopyPlugin = require("copy-webpack-plugin")
 const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const webpack = require("webpack")
 
 module.exports = {
   entry: {
@@ -58,13 +59,17 @@ module.exports = {
       },
     ],
   },
-  /*
+
+  plugins: [
+    new webpack.ProvidePlugin({
+      mnt: "moment",
+    }),
+    /*
     1. HtmlWebpackPlugin은 HTML 파일을 생성해주는 플러그인이다.
     2. template에는 템플릿 파일을 설정할 수 있다.
     3. chunks에는 해당 HTML 파일에서 사용할 chunk를 설정할 수 있다.
     4. filename에는 생성될 HTML 파일의 이름을 설정할 수 있다.
   */
-  plugins: [
     new HtmlWebpackPlugin({
       template: "./src/index.html",
       chunks: ["index"],
@@ -90,7 +95,7 @@ module.exports = {
         },
       ],
     }),
-    new BundleAnalyzerPlugin({}),
+    // new BundleAnalyzerPlugin({}),
     new MiniCssExtractPlugin(),
   ],
   optimization: {

@@ -200,3 +200,7 @@ $("#pricing-plan").on("click", () => {
     path: path.resolve(__dirname, "dist"),
   },
 ```
+
+<br>
+
+### Shimming
