@@ -166,3 +166,21 @@
     },
   },
 ```
+
+### Dynamic import
+
+- Dynamic import는 필요한 순간에 라이브러리를 불러올 수 있다.
+- 이것을 사용하기 위해서 import().then()을 사용한다.
+
+```js
+$("#pricing-plan").on("click", () => {
+  //dynamic import를 사용하면 이것은 Promise를 반환한다. 때문에 then을 사용할 수 있다.
+  import(/* webpackChunkName : "modal */ "./components/modal").then(module => {
+    const showModal = module.default
+    showModal()
+    $("#myModal").css("display", "block")
+  })
+})
+```
+
+- 이렇게 하면, pricing-plan을 클릭할 때, modal.js를 불러오게 된다.
