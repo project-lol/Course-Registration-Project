@@ -12,6 +12,10 @@
 - assets을 사용하는 방법을 배웠습니다.
 - vendor.js 는 무엇을 의미하는지에 대해서 배웠습니다.
 - 코드 스플리팅을 통해 번들링된 파일의 크기를 줄이는 방법을 배웠습니다.
+- Dynamic import에 대해서 배웠습니다.
+- 사용하지 않는 css를 지우는 방법에 대해서 배웠습니다.
+- Tree Shaking에 대해서 배웠습니다.
+- webpack파일을 분리하고, 공통된 파일을 합치는 방법을 배웠습니다
 
 <br>
 
@@ -238,3 +242,14 @@ $("#pricing-plan").on("click", () => {
 ### Webpack 파일 분리하기
 
 - webpack 파일 안에서도 dev, prod, common 파일을 분리할 수 있다.
+- 파일을 분리해놓고 각각의 dev와 Prod에서 common에 있는 파일을 가져와서 사용하면 된다.
+- 이것을 사용하기 위해서는 webpack.config.js에 webpack-merge를 설치해준다.
+
+```js
+const merge = require("webpack-merge")
+const common = require("./webpack.common.js")
+const prodConfig = {
+  mode: "production",
+}
+module.exports = merge(common, prodConfig)
+```
