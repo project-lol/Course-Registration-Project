@@ -6,6 +6,11 @@
 
 ## Learning Point : 프로젝트를 통해 학습한 것들
 
+- css loader의 필요성과 사용법을 배웠습니다.
+- dist 폴더의 역할을 배웠습니다.
+- webpack-dev-server를 사용하여 실시간으로 번들링된 결과물을 볼 수 있게 해주는 도구를 배웠습니다.
+- assets을 사용하는 방법을 배웠습니다.
+
 ### Css Loader는 왜 필요할까
 
 - css-loader는 css파일을 읽어서 js로 변환해주는 역할을 한다. css 파일을 js모듈로 변환해주어야 하는 이유는 웹팩이 모든 것을 모듈로 다루기 때문이다. css파일을 js로 변환해주면 웹팩이 css파일을 읽을 수 있게 된다. 이렇게하면 css파일을 읽어서 html에 style태그로 삽입해주는 역할을 하는 style-loader와 함께 사용할 수 있다.
