@@ -113,3 +113,27 @@
 ```html
 <img src="./assets/logo.png" alt="logo" />
 ```
+
+<br>
+
+### vendor.js 는 무엇을 의미하는 것일까
+
+- vendor.js는 라이브러리들을 모아놓은 파일이다.
+- vendor는 주로 번들된 Js 파일들을 의미하는데, 외부 라이브러리들을 모아놓은 파일을 의미한다. 이 파일은 성능을 향상시키기 위해서 주로 메인 어플리케이션 코드와 분리된다. 이렇게 분리함으로써, vendor code는 브라우저에 캐싱할 수도 있고, 브라우저에 캐싱되어 있으면, 어플리케이션 코드가 변경되어도 vendor code는 변경되지 않기 때문에, 어플리케이션 코드만 다시 다운로드 받으면 된다.
+- 이것을 사용하기 위해서는 webpack.config.js에 entry에 vendor를 추가해준다.
+
+```js
+  entry: {
+    app: "./src/index.js",
+    vendor: ["react", "react-dom"],
+  },
+```
+
+- 그리고 output에 filename에 [name]을 추가해준다.
+
+```js
+  output: {
+    filename: "[name].bundle.js",
+    path: path.resolve(__dirname, "dist"),
+  },
+```
