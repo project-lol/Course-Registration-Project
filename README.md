@@ -152,13 +152,17 @@
 - 위와 같은 방법으로 index.js와 course.js에서 중복된 라이브러리를 불러오는 문제를 해결할 수 있다.
 - 그리고 필요한 순간에 Dynamic import을 사용하여 라이브러리를 불러올 수 있다.
 
+|        | 스크린샷                                                                                                                        | 설명                                                                                                                      |
+| ------ | ------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| before | <img src="https://user-images.githubusercontent.com/71473074/218247731-44ac0382-276a-4b15-88a3-d4bf15e616cf.png" width="80%" /> | bundle-analyzer로 확인하면 이렇게 공통된 라이브러리가 존재함에도 불구하고, 두 가지 번들로 불러와지는 것을 확인할 수 있다. |
+| after  | <img src="https://user-images.githubusercontent.com/71473074/218247742-f90dc9ad-b750-44ab-a413-306e0425fad3.png" width="80%" /> | 코드 스플리팅을 적용하고 난 후, 공통된 라이브러리의 경우 하나의 번들로 합쳐진 것을 확인할 수 있다.                        |
 
-||스크린샷|설명|
-|-|-|-|
-|before|<img src="https://user-images.githubusercontent.com/71473074/218247731-44ac0382-276a-4b15-88a3-d4bf15e616cf.png" width="80%" />|bundle-analyzer로 확인하면 이렇게 공통된 라이브러리가 존재함에도 불구하고, 두 가지 번들로 불러와지는 것을 확인할 수 있다. |
-|after|<img src="https://user-images.githubusercontent.com/71473074/218247742-f90dc9ad-b750-44ab-a413-306e0425fad3.png" width="80%" />|코드 스플리팅을 적용하고 난 후, 공통된 라이브러리의 경우 하나의 번들로 합쳐진 것을 확인할 수 있다.| 
+- 이것을 사용하기 위해서는 webpack.config.js에 optimization을 추가해준다.
 
-
-
-
-
+```js
+  optimization: {
+    splitChunks: {
+      chunks: "all",
+    },
+  },
+```
