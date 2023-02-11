@@ -232,3 +232,9 @@ $("#pricing-plan").on("click", () => {
 
 - Tree shaking은 사용하지 않는 코드를 제거하는 것을 의미한다.
 - 이것은 기본적으로 build를 할 때 --production 모드에서 빌드를 하면 자동으로 실행된다.
+
+<br>
+
+### Webpack 파일 분리하기
+
+- webpack 파일 안에서도 dev, prod, common 파일을 분리할 수 있다.
