@@ -58,5 +58,14 @@ buildFooterItems(footerCol1, footerCol1Items)
 buildFooterItems(footerCol2, footerCol2Items)
 buildFooterItems(footerCol3, footerCol3Items)
 
+$("#pricing-plan").on("click", () => {
+  //dynamic import를 사용하면 이것은 Promise를 반환한다. 때문에 then을 사용할 수 있다.
+  import(/* webpackChunkName : "modal */ "./components/modal").then(module => {
+    const showModal = module.default
+    showModal()
+    $("#myModal").css("display", "block")
+  })
+})
+
 // const bannerEl = $("#banner-image")[0]
 // bannerEl.src = banner
