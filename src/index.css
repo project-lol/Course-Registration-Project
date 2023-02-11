@@ -5,6 +5,10 @@ index.css 파일은 전체적인 css를 관리하는 파일입니다.
 
 @import url("./assets/css/font-awesome.min.css");
 
+.dummy-css {
+  background-color: #667da5;
+}
+
 .icon-background {
   background: rgb(151, 68, 240);
   background: radial-gradient(
