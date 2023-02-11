@@ -2,7 +2,7 @@
 
 바닥부터 웹팩을 설정해나가면서 배워보는 프로젝트입니다.
 
-## Learning Point
+## Learning Point : 프로젝트를 통해 학습한 것들
 
 ### Css Loader는 왜 필요할까
 
