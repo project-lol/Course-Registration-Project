@@ -42,3 +42,31 @@
 - 이 폴더에 있는 내용물들이 실제 배포되는 파일들이다.
 - 이 dist 폴더에는 일반적으로 어플리케이션 코드의 번들링되고 최적화된 코드들이 들어있다.
 - 개발모드에서 사용하는 코드들은 제거된 상태로 번들링된다.
+
+<br>
+
+### webpack-dev-server
+
+- webpack-dev-server는 webpack을 사용하여 개발을 할 때, 실시간으로 번들링된 결과물을 볼 수 있게 해주는 도구이다.
+- webpack dev server는 HMR(Hot Module Replacement)을 지원한다. HMR은 코드를 수정하면, 수정된 부분만을 업데이트 해주는 기능이다.
+- 이것을 사용하면 개발을 할 때, 매번 브라우저를 새로고침하지 않아도 되어서 개발을 편하게 할 수 있다.
+- CRA도 내부적으로는 이 webpack-dev-server를 사용하고 있다고 한다.
+- 이것을 사용하기 위해서는 webpack.config.js에 devServer를 추가해준다.
+
+```js
+  devServer: {
+    contentBase: path.join(__dirname, "dist"),
+    compress: true,
+    port: 9000,
+  },
+```
+
+- 그리고 dist 폴더에 index.html을 만들어준다. 이 프로젝트의 경우 index.html은 src 폴더에 있기 때문에, html-webpack-plugin을 사용하여 dist 폴더에 index.html을 만들어준다.
+
+```js
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./src/index.html",
+    }),
+  ],
+```
