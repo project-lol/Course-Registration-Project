@@ -206,3 +206,22 @@ $("#pricing-plan").on("click", () => {
 ### Webpack Provider Plugin
 
 - Webpack Provider Plugin은 모든 모듈에서 $, jQuery, window.jQuery를 사용할 수 있게 해준다.
+
+<br>
+
+### Remove unused CSS
+
+- 사용하지 않는 css를 제거하기 위해서 PurgeCSS를 사용한다.
+- 이것을 사용하기 위해서는 webpack.config.js에 plugins에 PurgeCSSPlugin을 추가해준다.
+
+```js
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./src/index.html",
+    }),
+    new CleanWebpackPlugin(),
+    new PurgeCSSPlugin({
+      paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
+    }),
+  ],
+```
