@@ -44,6 +44,14 @@ module.exports = {
         test: /\.s[ac]ss$/,
         use: ["style-loader", "css-loader", "sass-loader"],
       },
+      /*
+        1. png, svg, jpg, jpeg, gif 파일을 처리할 수 있다.
+        2. type에는 asset/resource를 사용하여, 파일을 디스크에 저장할 수 있다.
+      */
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: "asset/resource",
+      },
     ],
   },
   /*
