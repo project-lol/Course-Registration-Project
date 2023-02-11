@@ -10,12 +10,13 @@ module.exports = {
     courses: "./src/pages/courses.js",
   },
   /* 
-    1.output의 filename에는 [name]을 사용하여, entry의 key값을 사용할 수 있다.
+    1. output의 filename에는 [name]을 사용하여, entry의 key값을 사용할 수 있다.
     2. output의 path에는 path.resolve를 사용하여, 절대경로를 사용할 수 있다.
     3. output의 clean에는 true를 사용하여, 이전에 생성된 파일을 삭제할 수 있다.
+    4. contenthash는 파일의 내용이 변경되었을 때만, 해시값이 변경된다.
     */
   output: {
-    filename: "[name].bundle.js",
+    filename: "[name].[contenthash].js",
     path: path.resolve(__dirname, "dist"),
     clean: true,
   },

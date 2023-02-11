@@ -184,3 +184,17 @@ $("#pricing-plan").on("click", () => {
 ```
 
 - 이렇게 하면, pricing-plan을 클릭할 때, modal.js를 불러오게 된다.
+
+<br>
+
+### content hash
+
+- content hash는 파일의 내용이 변경되었을 때만 파일명이 변경되는 것을 의미한다. 파일 내용이 변경되면, contenthash도 변경될 것이고, 그 결과로 파일명도 변경될 것이다. 이렇게하면 브라우저에서 오래된 파일을 캐싱하고 있는 문제를 해결할 수 있다.
+- 이것을 사용하기 위해서는 webpack.config.js에 output에 filename에 [contenthash]을 추가해준다.
+
+```js
+  output: {
+    filename: "[name].[contenthash].bundle.js",
+    path: path.resolve(__dirname, "dist"),
+  },
+```
