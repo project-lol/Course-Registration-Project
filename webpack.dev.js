@@ -1,7 +1,9 @@
 const path = require("path")
 const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer")
+const { merge } = require("webpack-merge")
+const commonConfig = require("./webpack.common")
 
-module.exports = {
+module.exports = merge(commonConfig, {
   mode: "development",
   /*
     1. devServer의 static에는 정적파일을 제공할 경로를 설정할 수 있다.
@@ -41,4 +43,4 @@ module.exports = {
     ],
   },
   plugins: [new BundleAnalyzerPlugin({})],
-}
+})
