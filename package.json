@@ -1,7 +1,6 @@
 {
-  "name": "8.1-course-project_initialize",
+  "name": "course registration project",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -20,5 +19,14 @@
   "devDependencies": {
     "webpack": "^5.69.1",
     "webpack-cli": "^4.9.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/project-lol/Course-Registration-Project.git"
+  },
+  "bugs": {
+    "url": "https://github.com/project-lol/Course-Registration-Project/issues"
+  },
+  "homepage": "https://github.com/project-lol/Course-Registration-Project#readme",
+  "description": ""
 }
