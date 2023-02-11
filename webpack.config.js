@@ -72,6 +72,12 @@ module.exports = {
       chunks: ["courses"],
       filename: "courses.html",
     }),
+    /*
+    1. CopyPlugin은 파일을 복사해주는 플러그인이다.
+    2. from에는 복사할 파일의 경로를 설정할 수 있다.
+    3. to에는 복사될 파일의 경로를 설정할 수 있다.
+    4. context에는 복사할 파일의 기준 경로를 설정할 수 있다.
+    */
     new CopyPlugin({
       patterns: [
         {
